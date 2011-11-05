@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>{{title}}</title>
+		<style type="text/css">
+			#container {
+				width:800px;
+				margin:auto;
+			}
+			audio {
+				width:100%;
+			}
+			#slides div {
+				display: none;
+				width:800px;
+				height:600px;
+				vertical-align:middle;
+				text-align:center;
+				font-size:30px;
+			}
+			#slides .visible {
+				display: table-cell;
+			}
+		</style>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="sync.js"></script>
+		<script type="text/javascript">
+			var on_load = function() {
+				// Whenever the current time in the audio soundtrack
+				// changes, alter the current slide if necessary. This
+				// effectively makes the audio UI work just like a
+				// movie UI.
+				syncVisualsWithAudio({
+					audio: "audio",
+					visuals: "#slides > div"
+				});
+			};
+
+		</script>
+	</head>
+	<body onload="on_load();">
+		<div id="container">
+			<div id="slides">
+			{% for slide in slides %}
+				<div data-at="{{slide.time}}">{{slide.content}}</div>
+			{% endfor %}
+			</div>
+			<div align="center">
+				<audio controls="">
+					<source src="{{audio}}">
+				</audio>
+			</div>
+		</div>
+	</body>
+</html>

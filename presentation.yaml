@@ -1,0 +1,7 @@
+- title: 'Test for generating presentation by Jinja2'
+  audio: 'audio.ogg'
+  slides:
+         - time: 0.0
+           content: <p>Hi, I'm Gianluca</p>
+         - time: 2.0
+           content: <p><b>Gianluca:</b> all your tag are belong to us</p>
