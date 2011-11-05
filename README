@@ -1,0 +1,14 @@
+Simple script to generate an HTML presentation having
+audio synched with contents.
+
+Inspired from <http://www.toolness.com/wp/2010/02/herdict-firefox-integration-and-better-html-presentations/>
+
+USAGE
+-----
+
+Call the script from command line passing as argument a configuration
+file using the YAML format
+
+ $ python generate_presentation.py config.yaml > presentation.html
+
+e load the created page in the browser.
